@@ -7,3 +7,5 @@ text = "ABC"
 print(text * 10)
 
 print('Adam' in names)
+print('Min', min(names))
+print('Max', max(names))
