@@ -1,7 +1,7 @@
 height = float(input('podaj wzrost [m]: '))
 weight = int(input('podaj wagę [kg]: '))
 
-bmi=weight/pow(height, 2)
+bmi = weight / pow(height, 2)
 
 if bmi < 16:
     print(f"BMI={bmi:.2f} wygłodzenie")
