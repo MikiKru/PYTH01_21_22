@@ -26,8 +26,18 @@ def get_age(user):
     return user["age"]
 def is_man(user):
     return user['gender']
-
+def sort_by_last_name(user):
+    return user['last_name']
+def sort_by_age_and_last_name(user):
+    return user['age'], user['last_name']
+# filtrowanie i mapowanie
 print(*filter(is_user_from_city, users))
 print(*filter(is_user_age_in_range, users))
 print(mean(map(get_age, filter(is_woman_and_name_starts_with_a, users))))
 print(len(list(filter(is_man, users))))
+# sortowanie
+print(sorted(users, key=sort_by_last_name))
+print(sorted(users, key=sort_by_age_and_last_name, reverse=True))
+print(sorted(filter(is_man, users), key=sort_by_age_and_last_name, reverse=True))
+
+
