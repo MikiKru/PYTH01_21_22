@@ -39,3 +39,4 @@ for user in users_from_age:
 women_starts_from_A = [user['age'] for user in users if user['name'][0] == "A" and not user['gender']]
 print("###########")
 print("Średnia wieku: ", round(statistics.mean(women_starts_from_A), 2))
+print("Standardowe odchylenie: ", round(statistics.stdev(women_starts_from_A), 2))
