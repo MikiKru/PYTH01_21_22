@@ -11,6 +11,7 @@ p8 = {"name": "Aleksandra", "last_name": "Kowalska", "address": ("Gdańsk", "Zbo
 
 users = [p1, p2, p3, p4, p5, p6, p7, p8]
 
+
 # lista mężczyzn z danego miasta
 # SELECT * FROM users WHERE address[1] = 'Gdańsk';
 city = "Gdańsk"
