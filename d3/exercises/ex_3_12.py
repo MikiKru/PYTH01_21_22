@@ -10,19 +10,26 @@ p8 = {"name": "Katarzyna", "last_name": "Kowalska", "address": ("Gdańsk", "Zbo�
 users = [p1, p2, p3, p4, p5, p6, p7, p8]
 
 # lista mężczyzn z danego miasta
-# SELECT * FROM users WHERE address[1] = ?;
+# SELECT * FROM users WHERE address[1] = 'Gdańsk';
 city = "Gdańsk"
 users_from_city = []
 for user in users:
     if user['address'][0] == city:
         users_from_city.append(user)
-
+print("###########")
 for user in users_from_city:
     print(f"|{user['name']:>15}|{user['last_name']:>15}|{user['address'][0]:>15}|{user['address'][1]:>35}|{user['address'][2]:5}|{user['gender']:5}|{user['age']:5}|")
 
 # lista osób z danego przedziału wiekowego
-# SELECT * FROM users WHERE age BETWEEN ? AND ?;
-
+# SELECT * FROM users WHERE age BETWEEN 40 AND 60;
+age_between = range(40, 61)
+users_from_age = []
+for user in users:
+    if user['age'] in age_between:
+        users_from_age.append(user)
+print("###########")
+for user in users_from_age:
+    print(f"|{user['name']:>15}|{user['last_name']:>15}|{user['address'][0]:>15}|{user['address'][1]:>35}|{user['address'][2]:5}|{user['gender']:5}|{user['age']:5}|")
 
 # średnia wieku kobiet o imionach rozpoczynających się na A
 # SELECT avg(age) FROM users WHERE gender = 0 AND name like 'A%';
