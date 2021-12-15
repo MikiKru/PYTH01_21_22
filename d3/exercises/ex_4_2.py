@@ -25,14 +25,16 @@ def is_woman_and_name_starts_with_a(user):
     return False
 
 # fukcje przyjmujące w argimencie obiekt innej fukcji - predykatu mogą na podstawie tego obiektu wywoływać funkcje predykaty w dowolnym momencie
-def get_users_from_city(predicate, users):
-    return [user for user in users if predicate(user)]
-def get_users_with_age_in_range(predicate, users):
-    return [user for user in users if predicate(user)]
-def get_women_and_name_starts_with_a(predicate, users):
+# def get_users_from_city(predicate, users):
+#     return [user for user in users if predicate(user)]
+# def get_users_with_age_in_range(predicate, users):
+#     return [user for user in users if predicate(user)]
+# def get_women_and_name_starts_with_a(predicate, users):
+#     return [user for user in users if predicate(user)]
+def f(predicate, users):
     return [user for user in users if predicate(user)]
 
-print(get_users_from_city(is_user_from_city, users))
-print(get_users_with_age_in_range(is_user_age_in_range, users))
-print(get_women_and_name_starts_with_a(is_woman_and_name_starts_with_a, users))
+print(f(is_user_from_city, users))
+print(f(is_user_age_in_range, users))
+print(f(is_woman_and_name_starts_with_a, users))
 
