@@ -9,9 +9,11 @@ hello_me("Michał")
 hello_me("Adam")
 
 print(division(1, 3))
-result = division(4,0)
+result = division(4, 0)
 print(result)
 
 print(get_normalized_random())
 print(get_normalized_random())
 print(get_normalized_random())
+
+print(get_unique_value_upper_tresh([4,3,2,4,5,3,2,1], 4))

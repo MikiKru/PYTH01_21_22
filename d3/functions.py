@@ -10,5 +10,8 @@ def division(x, y):
     return x / y
 def get_normalized_random():
     return f"Wylosowana wartość: {random()}"
+def get_unique_value_upper_tresh(values, treshold):
+    return set([v for v in values if v >= treshold])
+
 
 
