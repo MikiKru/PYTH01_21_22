@@ -23,7 +23,10 @@ def get_day_name():
         print(f"Dzień dla podanej daty {date} to {day_name(day_index(date,sep))}")
         break
 
-get_day_name()
+# get_day_name()
+day_index("2020-02-02")
+
+
 
 
 
