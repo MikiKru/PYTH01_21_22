@@ -28,3 +28,5 @@ def get_age(user):
 print(*filter(is_user_from_city, users))
 print(*filter(is_user_age_in_range, users))
 print(mean(*map(get_age, filter(is_woman_and_name_starts_with_a, users))))
+
+# sprawdź ile jest mężczyzn za pomocą funkcji wbudowanych
