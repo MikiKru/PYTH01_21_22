@@ -1,4 +1,4 @@
-import statistics
+from statistics import mean, stdev
 
 p1 = {"name": "Adam", "last_name": "Kowalski", "address": ("Warszawa", "Królewska", 15), "gender": True, "age": 39}
 p2 = {"name": "Benek", "last_name": "Benkowski", "address": ("Jaroty", "Bartąska", 128), "gender": True, "age": 45}
@@ -38,5 +38,5 @@ for user in users_from_age:
 # SELECT avg(age) FROM users WHERE gender = 0 AND name like 'A%';
 women_starts_from_A = [user['age'] for user in users if user['name'][0] == "A" and not user['gender']]
 print("###########")
-print("Średnia wieku: ", round(statistics.mean(women_starts_from_A), 2))
-print("Standardowe odchylenie: ", round(statistics.stdev(women_starts_from_A), 2))
+print("Średnia wieku: ", round(mean(women_starts_from_A), 2))
+print("Standardowe odchylenie: ", round(stdev(women_starts_from_A), 2))
