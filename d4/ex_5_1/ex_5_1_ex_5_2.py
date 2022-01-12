@@ -6,17 +6,28 @@ class User:
         self.__last_name = last_name
         self.__sex = sex
         self.__year = year
-    def get_age(self):
-        return datetime.date.today().year - self.__year
+    def get_name(self):
+        return self.__name
+    def get_last_name(self):
+        return self.__last_name
+    def get_sex(self):
+        return self.__sex
+    def get_year(self):
+        return self.__year
+    def set_name(self, name):
+        self.__name = name
+    def set_last_name(self, last_name):
+        self.__last_name = last_name
+    def set_sex(self, sex):
+        self.__sex = sex
     def set_year(self, year):
         if str(type(year)) == "<class 'int'>":
             print("zaktualizowano wartość")
             self.__year = year
         else:
             print("błędny typ wartości - pole pozostaje bez zmian!")
-
-    def get_year(self):
-        return self.__year
+    def get_age(self):
+        return datetime.date.today().year - self.__year
     def __str__(self):                      # napisowa reprezentacja obiektu
         return f"{self.__name} {self.__last_name} płeć: {'M' if self.__sex else 'K'} wiek: {self.get_age()}"
 
