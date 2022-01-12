@@ -40,3 +40,5 @@ print(u1.year)          # getter
 u1.year = "1410"        # setter
 print(u1)
 
+print("Klasy po których dziedizczy User: ", User.__bases__)
+print(User.__mro__)
