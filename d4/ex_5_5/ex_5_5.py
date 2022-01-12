@@ -49,10 +49,10 @@ class User:
     sex = property(__get_sex, __set_sex)
     year = property(__get_year, __set_year)
 
-u1 = User("Jan", "Kowalski", True, 1990)
-u2 = User("Adam", "Kowalski", True, 1991)
-u3 = User("Anna", "Nowak", False, 1990)
-
-print(u1 == u2)
-print(u1 > u2)
-print(u2 > u3)
+# u1 = User("Jan", "Kowalski", True, 1990)
+# u2 = User("Adam", "Kowalski", True, 1991)
+# u3 = User("Anna", "Nowak", False, 1990)
+#
+# print(u1 == u2)
+# print(u1 > u2)
+# print(u2 > u3)
