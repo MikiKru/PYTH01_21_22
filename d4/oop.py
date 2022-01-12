@@ -18,8 +18,16 @@ class User:
 user1 = User("Michał", "Kruczkowski", "mk@mk.pl", "mk")
 user1.set_email("x@x.pl")
 user1.set_email("x@x.pl")
-print(user1.get_user())
 
 user2 = User("A", "A", "a@a.pl", "a")
-print(user2.get_user())
+user3 = User("B", "B", "b@b.pl", "b")
 
+users = [user1, user2, user3]
+
+
+for user in users:
+    print(user.last_name)
+# sprawdzanie przynależności obiektu do klasy
+print(isinstance(user1, User))
+print(isinstance(user1, object))
+print(user1.__dict__)
