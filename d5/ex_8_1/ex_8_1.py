@@ -2,10 +2,10 @@ import datetime
 
 class User:
     def __init__(self, name, last_name, sex, year):
-        self.__name = name              # pole silnie prywatne -> niedostępne spoza klasy
-        self.__last_name = last_name
-        self.__sex = sex
-        self.__year = year
+        self.__set_name(name)
+        self.__set_last_name(last_name)
+        self.__set_sex(sex)
+        self.__set_year(year)
     def __get_name(self):
         return self.__name
     def __get_last_name(self):
