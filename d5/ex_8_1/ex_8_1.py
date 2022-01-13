@@ -2,10 +2,10 @@ import datetime
 
 class EmptyStringError(Exception):
     def __init__(self, field_name):
-        print(f"Pole {field_name} nie może być puste!")
+        print(f"*Pole {field_name} nie może być puste!")
 class BadBirthDateError(Exception):
     def __init__(self):
-        print("Błędny rok urodzenia!")
+        print("*Błędny rok urodzenia!")
 
 class User:
     def __init__(self, name, last_name, sex, year):
