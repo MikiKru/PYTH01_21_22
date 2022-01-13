@@ -20,9 +20,9 @@ with open(r'files\csv\example2.csv', mode="a", encoding='cp1250') as file2:
 with open(r'files\csv\example2.csv', mode="r", encoding='cp1250') as file3:
     print(file3.read())
     print("==============")
-    file3.seek(0)           # przesuwa na początek pliku
+    file3.seek(0)           # przesuwa na początek pliku gdy 0 a na koniec gdy -1
     print(file3.readlines())
     print("==============")
-    file3.seek(0)           # przesuwa na początek pliku
+    file3.seek(0)           # przesuwa na początek pliku gdy 0 a na koniec gdy -1
     for line in file3.readlines():
         print(line.strip())
