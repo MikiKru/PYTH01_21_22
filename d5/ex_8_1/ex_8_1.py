@@ -1,5 +1,12 @@
 import datetime
 
+class EmptyStringError(Exception):
+    def __init__(self, field_name):
+        print(f"Pole {field_name} nie może być puste!")
+class BadBirthDateError(Exception):
+    def __init__(self):
+        print("Błędny rok urodzenia!")
+
 class User:
     def __init__(self, name, last_name, sex, year):
         self.__set_name(name)
@@ -15,17 +22,30 @@ class User:
     def __get_year(self):
         return self.__year
     def __set_name(self, name):
-        self.__name = name
+        try:
+            if name == "" or name == None:
+                raise EmptyStringError("name")
+            self.__name = name
+        except EmptyStringError:
+            self.__name = "Anonim"
     def __set_last_name(self, last_name):
-        self.__last_name = last_name
+        try:
+            if last_name == "" or last_name == None:
+                raise EmptyStringError("nazwisko")
+            self.__last_name = last_name
+        except EmptyStringError:
+            self.__last_name = "Anonim"
     def __set_sex(self, sex):
         self.__sex = sex
     def __set_year(self, year):
-        if str(type(year)) == "<class 'int'>":
-            print("zaktualizowano wartość")
+        try:
+            if year > datetime.date.today().year:
+                raise BadBirthDateError()
             self.__year = year
-        else:
-            print("błędny typ wartości - pole pozostaje bez zmian!")
+        except BadBirthDateError:
+            self.year = datetime.date.today().year
+        except TypeError:
+            self.year = datetime.date.today().year
     def get_age(self):
         return datetime.date.today().year - self.__year
     def __str__(self):                      # napisowa reprezentacja obiektu
@@ -34,3 +54,6 @@ class User:
     last_name = property(__get_last_name, __set_last_name)
     sex = property(__get_sex, __set_sex)
     year = property(__get_year, __set_year)
+
+user = User("", "", True, 2024)
+print(user)
