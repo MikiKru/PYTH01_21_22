@@ -21,7 +21,9 @@ class PrepaidPhone:
             self.add_to_limit(100)
 
 pp = PrepaidPhone(150)
-pp.call(50)
-pp.call(70)
-pp.call(50)
-pp.call(50)
+pp.call(50)     # dzwonimy
+pp.call(70)     # dzwonimy
+pp.call(50)     # blokuje - każe doładować
+pp.call(50)     # dzwonimy
+pp.add_to_limit(500)
+print(pp.get_limit())
